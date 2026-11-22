@@ -47,6 +47,7 @@ def test_core_documentation_and_adrs_exist() -> None:
         repo_root / "docs" / "architecture" / "data-flow.md",
         repo_root / "docs" / "architecture" / "security-model.md",
         repo_root / "docs" / "architecture" / "testing-strategy.md",
+        repo_root / "docs" / "ROADMAP.md",
         repo_root / "docs" / "decisions" / "001-initial-architecture.md",
         repo_root / "docs" / "decisions" / "ADR-001-operator-framework.md",
         repo_root / "docs" / "decisions" / "ADR-002-data-plane-isolation.md",
