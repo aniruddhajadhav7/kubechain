@@ -38,6 +38,7 @@ def test_core_documentation_and_adrs_exist() -> None:
 
     required_files = [
         repo_root / "README.md",
+        repo_root / "LICENSE",
         repo_root / "pyproject.toml",
         repo_root / ".gitignore",
         repo_root / ".env.example",

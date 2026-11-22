@@ -10,6 +10,7 @@
 [![Redis](https://img.shields.io/badge/cache-redis-DC382D.svg)](https://redis.io/)
 [![Prometheus](https://img.shields.io/badge/metrics-prometheus-E6522C.svg)](https://prometheus.io/)
 [![OpenTelemetry](https://img.shields.io/badge/tracing-opentelemetry-F5A800.svg)](https://opentelemetry.io/)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
 
 KubeChain is an engineering platform designed to declaratively provision, manage, monitor, and expose EVM-compatible blockchain RPC infrastructure on Kubernetes. By bridging cloud-native operational paradigms with the specific demands of stateful, append-only blockchain nodes, KubeChain automates the reconciliation of node workloads, dynamically classifies synchronization and head lag, routes JSON-RPC traffic with reorg-aware caching, and enforces compute-unit rate limits while isolating public proxy traffic from Kubernetes control plane operations.
 
@@ -487,4 +488,5 @@ Contributions are welcome. Please adhere to the following workflow:
 
 ## License
 
-The project license has not yet been specified.
+This project is licensed under the terms of the [GNU Affero General Public License v3.0 (AGPLv3)](LICENSE).
+See the [LICENSE](LICENSE) file for the complete license terms.
