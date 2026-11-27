@@ -1,0 +1,23 @@
+# Exposes the Anvil JSON-RPC endpoint both internally via cluster DNS
+# (anvil-dev-rpc.kubechain-nodes.svc.cluster.local:8545) and locally on
+# http://localhost:8545 via kind's NodePort 30545 mapping.
+apiVersion: v1
+kind: Service
+metadata:
+  name: anvil-dev-rpc
+  namespace: kubechain-nodes
+  labels:
+    app.kubernetes.io/name: anvil
+    app.kubernetes.io/instance: anvil-dev
+    app.kubernetes.io/part-of: kubechain
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: anvil
+    app.kubernetes.io/instance: anvil-dev
+  ports:
+    - name: json-rpc
+      port: 8545
+      targetPort: json-rpc
+      nodePort: 30545
+      protocol: TCP

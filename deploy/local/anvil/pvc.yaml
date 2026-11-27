@@ -1,0 +1,19 @@
+# Optional PersistentVolumeClaim for Anvil state snapshots
+# Note: Anvil is an in-memory development node, not a disk-backed Ethereum client
+# like Geth or Besu. Mounting this PVC with `--state /data/anvil-state.json`
+# allows local dev accounts and contract deployments to persist across pod restarts.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: anvil-dev-state
+  namespace: kubechain-nodes
+  labels:
+    app.kubernetes.io/name: anvil
+    app.kubernetes.io/instance: anvil-dev
+    app.kubernetes.io/part-of: kubechain
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

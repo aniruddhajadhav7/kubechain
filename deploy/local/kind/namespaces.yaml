@@ -1,0 +1,18 @@
+# Kubernetes Namespaces for KubeChain local environment
+# Separates platform control/data plane components from blockchain node workloads.
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kubechain-system
+  labels:
+    app.kubernetes.io/part-of: kubechain
+    kubechain.io/plane: control-and-data
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kubechain-nodes
+  labels:
+    app.kubernetes.io/part-of: kubechain
+    kubechain.io/plane: workloads

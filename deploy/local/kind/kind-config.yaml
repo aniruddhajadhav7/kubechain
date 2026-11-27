@@ -1,0 +1,23 @@
+# kind cluster configuration for KubeChain local development
+# Creates a 2-node cluster (1 control-plane, 1 worker) with NodePort mappings
+# so services are accessible directly on localhost without port-forwarding.
+
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: kubechain-local
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      # Anvil JSON-RPC NodePort -> localhost:8545
+      - containerPort: 30545
+        hostPort: 8545
+        protocol: TCP
+      # Future RPC Gateway NodePort -> localhost:8000
+      - containerPort: 30800
+        hostPort: 8000
+        protocol: TCP
+      # Future Prometheus Metrics NodePort -> localhost:9090
+      - containerPort: 30090
+        hostPort: 9090
+        protocol: TCP
+  - role: worker
